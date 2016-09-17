@@ -1,0 +1,107 @@
+#====================================================================================================
+#                                         CLEARLAGG GUI
+#                                      (by HYCRAFT NETWORK)
+#									  hymc.us.to / hymc.uk.to
+#====================================================================================================
+#     								          CONFIG
+#										You can edit config
+#====================================================================================================
+
+#Do not change this
+options:
+
+#Command that open GUI (default:/lagggui) Do not use "/"
+	defaultcommand: lagggui
+
+#GUI OPEN MESSAGE - Message that will be sended to player who open GUI
+	message: &9ClearLagg> &7You open ClearLagg GUI!
+	
+#MISSING PERMISSION MESSAGE
+	permissionmessage: &9ClearLagg> &7This command requires permission &aclearlagggui.show
+	
+#SEND PROMOTION MESSAGE
+	promotionmsg: true
+
+#====================================================================================================
+#     								    CODE - Do not edit this
+#                               If you edit this and crash plugin you will
+#                               get no support! - Do this at your own risk
+#====================================================================================================
+on join:
+	if {@promotionmsg} is true:
+		if player is op:
+			send "&6==============================" to player
+			send "&aThank you for using &3ClearLagg GUI!" to player
+			send "&e   " to player
+			send "&e   If you like this skript please" to player
+			send "&e  rate it with &a5 stars &eon &e&lspigot" to player
+			send "&e In future &c&lHyCraft DEV TEAM!" to player
+			send "&e   " to player
+			send "&c    To disable this message set" to player
+			send "&c 'onjoinopmsg' to false in config" to player
+			send "&6==============================" to player
+		else:
+			send "&6==============================" to player
+			send "&aThis server is using ClearLagg GUI" to player
+			send "&aby &c&lHYCRAFT DEV TEAM!" to player
+			send "&6==============================" to player
+	else:
+		stop
+
+command /{@defaultcommand} [<text>]:
+	aliases: /lg
+	permission: clearlagggui.show
+	permission message: {@permissionmessage}
+	trigger:
+		if arg-1 is not set:
+			send "{@message}"
+			open chest with 3 rows named "&3CLEARLAGG GUI" to player
+			wait 1 tick
+            
+			format slot 10 of player with 367 named "&f&o||&e&lGround Clear&f&o||" with lore "||&aClick here to:||&aRemove all||&aground items" to close then run [execute player command "lagg clear"]
+		
+			format slot 12 of player with 276 named "||&e&lKillAllMobs&f&o||" with lore "||&aClick here to:||&aKill all mobs" to close then run [execute player command "lagg killmobs"]
+			
+			format slot 14 of player with 262 named "||&e&lKillAllMobs&f&o||" with lore "||&aClick here to:||&aClear entities||&afrom your radius" to close then run [execute player command "lagg area 100"]
+			
+			format slot 16 of player with 2 named "||&e&lKillAllMobs&f&o||" with lore "||&aClick here to:||&aUnload unused chunks" to close then run [execute player command "lagg unloadchunks"]
+			
+			format slot 0 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+		
+			format slot 1 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 2 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 3 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 4 of player with 46 named "||&c&lHelt Server&f&o||" with lore "||&4&l Halts most||&cserver activity||&8(toggle clearlagg)" to close then run [execute player command "lagg halt"]
+			
+			format slot 5 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 6 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 7 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 8 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 18 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+		
+			format slot 19 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 20 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 21 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 22 of player with 46 named "||&c&lHelt Server&f&o||" with lore "||&4&l Halts most||&cserver activity||&8(toggle clearlagg)" to close then run [execute player command "lagg halt"]
+			
+			format slot 23 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+			format slot 24 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 25 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+			
+			format slot 26 of player with 35 named "||&e&lClearLagg GUI&f&o||" with lore "||&a       Made by:||&e  HyCraft Dev Team" to be unstealable
+
+
+
+#end of code
